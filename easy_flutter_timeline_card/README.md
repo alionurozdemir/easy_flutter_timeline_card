@@ -15,7 +15,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  easy_flutter_timeline_card: ^1.0.0
+  easy_flutter_timeline_card: ^<latest-version>
   ```
 
 Then run flutter pub get to install the package.
