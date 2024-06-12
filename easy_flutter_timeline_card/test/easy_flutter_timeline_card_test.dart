@@ -3,19 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('TimelineCard renders correctly', (WidgetTester tester) async {
+  testWidgets('TimelineCard with asset image renders correctly',
+      (WidgetTester tester) async {
     await tester.pumpWidget(
-      const MaterialApp(
-        home: TimelineCard(
-          title: 'Test Card',
-          subtitle: 'Test Subtitle',
+      MaterialApp(
+        home: TimelineCard.asset(
+          title: 'Asset Image Card',
+          subtitle: 'Subtitle',
           imageUrl: 'assets/test_image.jpg',
         ),
       ),
     );
 
-    expect(find.text('Test Card'), findsOneWidget);
-    expect(find.text('Test Subtitle'), findsOneWidget);
+    expect(find.text('Asset Image Card'), findsOneWidget);
+    expect(find.text('Subtitle'), findsOneWidget);
+    expect(find.byType(Image), findsOneWidget);
+  });
+
+  testWidgets('TimelineCard with network image renders correctly',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: TimelineCard.network(
+          title: 'Network Image Card',
+          subtitle: 'Subtitle',
+          imageUrl: 'https://example.com/test_image.jpg',
+        ),
+      ),
+    );
+
+    expect(find.text('Network Image Card'), findsOneWidget);
+    expect(find.text('Subtitle'), findsOneWidget);
     expect(find.byType(Image), findsOneWidget);
   });
 }

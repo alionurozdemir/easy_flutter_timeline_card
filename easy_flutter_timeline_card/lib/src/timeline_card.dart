@@ -1,20 +1,51 @@
+import 'package:easy_flutter_timeline_card/timeline_card.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:easy_flutter_timeline_card/src/timeline_tile.dart';
 
 class TimelineCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  final String imageUrl;
+  final ImageProvider? imageProvider;
   final bool isLast;
 
   const TimelineCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
-    required this.imageUrl,
+    this.imageProvider,
     this.isLast = false,
-  }) : super(key: key);
+  });
+
+  factory TimelineCard.asset({
+    Key? key,
+    required String title,
+    required String subtitle,
+    required String imageUrl,
+    bool isLast = false,
+  }) {
+    return TimelineCard(
+      key: key,
+      title: title,
+      subtitle: subtitle,
+      imageProvider: AssetImage(imageUrl),
+      isLast: isLast,
+    );
+  }
+
+  factory TimelineCard.network({
+    Key? key,
+    required String title,
+    required String subtitle,
+    required String imageUrl,
+    bool isLast = false,
+  }) {
+    return TimelineCard(
+      key: key,
+      title: title,
+      subtitle: subtitle,
+      imageProvider: NetworkImage(imageUrl),
+      isLast: isLast,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +56,8 @@ class TimelineCard extends StatelessWidget {
         children: [
           Text(
             subtitle,
-            style: GoogleFonts.robotoSlab(
-              color: const Color(0xFFFF671D),
+            style: const TextStyle(
+              color: Color(0xFFFF671D),
               fontSize: 17,
               fontWeight: FontWeight.w400,
             ),
@@ -34,7 +65,7 @@ class TimelineCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             title,
-            style: GoogleFonts.robotoSlab(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 17,
               fontWeight: FontWeight.w400,
@@ -44,10 +75,12 @@ class TimelineCard extends StatelessWidget {
           Container(
             height: 157,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(imageUrl),
-                fit: BoxFit.fill,
-              ),
+              image: imageProvider != null
+                  ? DecorationImage(
+                      image: imageProvider!,
+                      fit: BoxFit.fill,
+                    )
+                  : null,
             ),
           ),
         ],

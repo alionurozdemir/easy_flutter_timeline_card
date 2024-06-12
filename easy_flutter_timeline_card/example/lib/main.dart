@@ -30,19 +30,19 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Easy Flutter Timeline Card Example'),
       ),
       body: ListView(
-        children: const [
-          TimelineCard(
-            title: 'Card 1',
+        children: [
+          TimelineCard.asset(
+            title: 'Asset Image Card 1',
             subtitle: 'Subtitle 1',
             imageUrl: 'assets/image1.jpg',
           ),
-          TimelineCard(
-            title: 'Card 2',
+          TimelineCard.network(
+            title: 'Network Image Card 2',
             subtitle: 'Subtitle 2',
-            imageUrl: 'assets/image2.jpg',
+            imageUrl: 'https://example.com/image2.jpg',
           ),
-          TimelineCard(
-            title: 'Card 3',
+          TimelineCard.asset(
+            title: 'Asset Image Card 3',
             subtitle: 'Subtitle 3',
             imageUrl: 'assets/image3.jpg',
             isLast: true,

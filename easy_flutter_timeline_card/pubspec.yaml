@@ -1,6 +1,6 @@
 name: easy_flutter_timeline_card
 description: A Flutter package that provides an easy-to-use timeline card widget for creating beautiful timelines in your app.
-version: 1.0.1
+version: 1.0.3
 homepage: https://github.com/alionurozdemir/easy_flutter_timeline_card
 
 environment:
@@ -30,6 +30,7 @@ platforms:
 
 # The following section is specific to Flutter packages.
 flutter:
+
 
   # To add assets to your package, add an assets section, like this:
   # assets:
