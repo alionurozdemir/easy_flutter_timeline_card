@@ -20,7 +20,7 @@ dependencies:
 
 Then run flutter pub get to install the package.
 
-<img src="https://raw.githubusercontent.com/ponnamkarthik/FlutterToast/master/screenshot/1.png" width="320px" />
+<img src="https://github.com/alionurozdemir/easy_flutter_timeline_card/blob/main/screenshot/cover.png" width="320px" />
 
 ## Usage
 Import the package in your Dart file:
