@@ -49,12 +49,13 @@ TimelineCard.network(
 
 ### Customization
 
-| You can customize the appearance of the timeline card by providing different values for the title, subtitle, and imageUrl parameters.|
-| --------------- | ------------------------------------------------------------------ |------------|
-| title |  The title text of the card. | 
-| subtitle | The subtitle text of the card. | 
-| imageUrl |  The URL or path of the image to display in the card. Use TimelineCard.asset for local asset images and TimelineCard.network for network images.| 
-| isLast |  A boolean value indicating whether the card is the last one in the timeline. Set it to true for the last card to adjust the connection line. | 
+| Parameter | Description |
+|-----------|-------------|
+| `title` | The title text of the card. |
+| `subtitle` | The subtitle text of the card. |
+| `imageUrl` | The URL or path of the image to display in the card. Use `TimelineCard.asset` for local asset images and `TimelineCard.network` for network images. |
+| `isLast` | A boolean value indicating whether the card is the last one in the timeline. Set it to `true` for the last card to adjust the connection line. |
+
 
 Example
 An example app is available in the example directory of the package. You can run it to see the timeline card in action with both local assets and network images.
